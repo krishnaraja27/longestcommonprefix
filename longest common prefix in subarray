@@ -1,0 +1,40 @@
+Given an array of N strings, find the longest common prefix among all strings present in the array.
+
+Example 1:
+Input:
+N = 4
+arr[] = {geeksforgeeks, geeks, geek,
+         geezer}
+Output: gee
+Explanation: "gee" is the longest common
+prefix in all the given strings.
+
+
+##################################################Python##################################################################################################
+class Solution:
+    def longestCommonPrefix(self, arr, n):
+        # code here
+        arr.sort()
+        ram=arr[0]
+        madhu=arr[n-1]
+        rk=len(ram)
+        rk2=len(madhu)
+        i=0
+        j=0
+        ans=[]
+        string=""
+        while i<rk and j<rk2:
+            if ram[i]==madhu[j]:
+                ans.append(ram[i])
+            else:
+                break
+            i+=1
+            j+=1
+            
+        if len(ans)==0:
+            return -1
+        else:
+            for i in ans:
+                string+=i
+            return string
+
